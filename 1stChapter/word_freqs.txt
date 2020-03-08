@@ -1,0 +1,8 @@
+ 
+hello ,3 
+name ,3 
+sajeda ,1 
+khdair ,2 
+ban ,1 
+afaneh ,1 
+ahmad ,1 
