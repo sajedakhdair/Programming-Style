@@ -12,13 +12,11 @@ data.push(""); //data[5] is the word
 data.push(""); //data[6] is word,NNNN
 data.push(0); // data[7] is frequency
 data.push("");//data[8] is index
-data.push(fs.readFileSync("./1stChapter/word_freqs.txt", "utf8").split("\n")); //data[9] is array contains word_freq
-
+data.push([]); //data[9] is array contains word_freq
 lineReader.eachLine("./files/inputFile.txt", function (
     line: string,
     last: boolean
 ) {
-    console.log(line);
     data[1] = line;
     if (data[1][data[1].length - 1] != "\n") {
         data[1] = data[1] + "\n";
@@ -56,8 +54,6 @@ lineReader.eachLine("./files/inputFile.txt", function (
         }
     }
     if (last) {
-        console.log("111");
-        console.log(data[9]);
         fs.writeFileSync("./1stChapter/word_freqs.txt", '', 'utf8')
         for (data[8] = 0; data[8] < data[9].length; data[8]++) {
             fs.appendFile("./1stChapter/word_freqs.txt", `${data[9][data[8]]} \n`, function (
