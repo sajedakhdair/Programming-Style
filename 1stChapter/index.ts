@@ -64,5 +64,36 @@ lineReader.eachLine("./files/inputFile.txt", function (
                 }
             });
         }
+        /*//here part 2 if i can do it by this way 
+        data[9].sort((a: string, b: string) => {
+            return Number(b.split(",")[1]) - Number(a.split(",")[1]);
+        });
+        console.log(data[9]);here data[9] contains the word sorted according to the frequency 
+        */
+        part2();
     }
 });
+function part2() {//here part2 as in the code in the book 
+    for (data[0] = 0; data[0] < 25; data[0]++) {
+        data[data[0]] = '';
+    }
+    data[0] = '';
+    data[25] = '';//word,freq
+    data[26] = 0;//freq 
+    lineReader.eachLine('./1stChapter/word_freqs.txt', function (line: string, last: boolean) {
+        data[25] = line;
+        data[26] = Number(data[25].split(',')[1]);
+        data[25] = data[25].split(',')[0];
+        for (data[27] = 0; data[27] < 25; data[27]++) {
+            if (data[data[27]] == '' || Number(data[data[27]].split(',')[1]) < data[26]) {
+                data[data[27]] = data[25] + "," + data[26];
+                break;
+            }
+        }
+        if (last) {
+            for (data[28] = 0; data[28] < 25; data[28]++) {
+                //  console.log("sortedData" + data[data[28]]);
+            }
+        }
+    })
+}
