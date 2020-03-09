@@ -59,10 +59,12 @@ lineReader.eachLine("./files/inputFile.txt", function (line, last) {
                 }
             });
         }
-        data[9].sort(function (a, b) {
+        /*//here part 2 if i can do it by this way
+        data[9].sort((a: string, b: string) => {
             return Number(b.split(",")[1]) - Number(a.split(",")[1]);
         });
-        console.log(data[9]);
+        console.log(data[9]);here data[9] contains the word sorted according to the frequency
+        */
         part2();
     }
 });
@@ -85,7 +87,7 @@ function part2() {
         }
         if (last) {
             for (data[28] = 0; data[28] < 25; data[28]++) {
-                //  console.log("sortedData" + data[data[28]]);
+                console.log("sortedData" + data[data[28]]);
             }
         }
     });

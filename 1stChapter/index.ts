@@ -92,7 +92,7 @@ function part2() {//here part2 as in the code in the book
         }
         if (last) {
             for (data[28] = 0; data[28] < 25; data[28]++) {
-                //  console.log("sortedData" + data[data[28]]);
+                 console.log("sortedData" + data[data[28]]);
             }
         }
     })
