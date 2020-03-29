@@ -1,0 +1,11 @@
+Q2: Mismatch. What happens if the sort method of WordFrequency- Manager is renamed to sorted_freqs, for example? 
+Explain the result in detail.
+
+Answer :
+It will cause an error(
+Non-abstract class 'WordFrequencyManager' does not implement 
+inherited abstract member 'sort' from class 'IWordFrequencyCounter'.)
+ so to solve it we can add function sort with empty implementation 
+ or rename function sort to sorted_freqs in IWordFrequencyCounter
+
+ 
