@@ -23,7 +23,7 @@ function processWord(resolve) {
             resolve();
             clearInterval(id);
         }
-    }, 1)
+    }, 10 * Math.random())
 }
 
 function createThreads() {
