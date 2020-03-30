@@ -1,7 +1,7 @@
 const fs = require("fs");
 class DataStorageManager {
     data: string;
-    dispatch(message: string[]) {
+    dispatch(message: string[]): any {
         switch (message[0]) {
             case "init":
                 return this.init(message[1]);
@@ -14,7 +14,7 @@ class DataStorageManager {
     init(filePath: string) {
         this.data = fs.readFileSync(filePath, 'utf8').toLowerCase().replace(/[\W_]+/g, " ");
     }
-    words() {
+    words(): string[] {
         return this.data.split(" ");
     }
 }
@@ -89,11 +89,12 @@ class WordFrequencyController {
         this.stopWordManager.dispatch(['init']);
     }
     run() {
-        this.storageManager.words().forEach(word => {
-            if (!this.stopWordManager.isStopWord(word))
-                this.wordFrequencyManager.incrementCount(word)
+        let words = this.storageManager.dispatch(['words']);
+        words.forEach(word => {
+            if (!this.stopWordManager.dispatch(["isStopWord", word]))
+                this.wordFrequencyManager.dispatch(["incrementCount", word])
         });
-        console.log(this.wordFrequencyManager.sort());
+        console.log(this.wordFrequencyManager.dispatch(['sort']));
     }
 }
 
