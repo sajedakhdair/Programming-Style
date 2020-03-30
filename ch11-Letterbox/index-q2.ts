@@ -8,7 +8,7 @@ class Info {
 class DataStorageManager {
     data: string;
     information: Info = new Info();
-    dispatch(message: string[]) {
+    dispatch(message: string[]): any {
         switch (message[0]) {
             case "init":
                 return this.init(message[1]);
@@ -115,11 +115,12 @@ class WordFrequencyController {
         this.stopWordManager.dispatch(['init']);
     }
     run() {
-        this.storageManager.words().forEach(word => {
-            if (!this.stopWordManager.isStopWord(word))
-                this.wordFrequencyManager.incrementCount(word)
+        let words = this.storageManager.dispatch(['words']);
+        words.forEach(word => {
+            if (!this.stopWordManager.dispatch(["isStopWord", word]))
+                this.wordFrequencyManager.dispatch(["incrementCount", word])
         });
-        console.log(this.wordFrequencyManager.sort());
+        console.log(this.wordFrequencyManager.dispatch(['sort']));
     }
 }
 
