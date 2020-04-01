@@ -33,7 +33,7 @@ const removeStopWords = (wordList: string[]): string[] => {
 const frequencies = (wordList: string[]): {} => {
     let wordFrequancies = [];;
     if (!Array.isArray(wordList) || wordList.length === 0) {
-        return {};
+        return [];
     }
     wordList.forEach(word => {
         if (wordFrequancies[word]) {
