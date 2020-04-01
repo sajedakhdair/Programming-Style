@@ -1,11 +1,19 @@
 const fs = require("fs");
 
+type EventOptions =
+    | "load"
+    | "start"
+    | "word"
+    | "validWord"
+    | "sortAndPrint"
+    | "run"
+    | "endOfFile";
 class EventManager {
     subscriptions: {};
     constructor() {
         this.subscriptions = {};
     }
-    subscribe(eventType: string, handler): void {
+    subscribe(eventType: EventOptions, handler): void {
         if (this.subscriptions[eventType]) {
             this.subscriptions[eventType].push(handler);
         } else {
