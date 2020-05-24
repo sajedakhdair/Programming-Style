@@ -15,4 +15,3 @@ has no meaning whatsoever.As Cicero's text doesn't contain
 the letters K, W, or Z, alien to latin, these, and others are often 
 inserted randomly to mimic the typographic appearence of European languages,
 as are digraphs not to be found in the original.
-
